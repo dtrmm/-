@@ -1,0 +1,8 @@
+function isCorrect($a)
+{
+    $marc1 = (substr_count($a, "{") == substr_count($a, "}"));
+    $marc2 = (substr_count($a, "[") == substr_count($a, "]"));
+    $marc3 = (substr_count($a, "(") == substr_count($a, ")"));
+    if($marc1 && $marc2 && $marc3){return true;}
+	  else{return false;}
+}
