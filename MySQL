@@ -1,0 +1,12 @@
+/* Возвращение всех сотрудников, упорядоченных в алфавитном порядке, из городов ничинающихся с буквы "А". */
+SELECT * FROM employee WHERE SUBSTRING(city, 1, 1) = "А" ORDER BY name
+
+/* Возвращение сотрудников, у которых в день запроса день рождения. */
+SELECT * FROM employee WHERE DATE_FORMAT(CURDATE(), "%m:%d") = DATE_FORMAT(birthday, "%m:%d")
+
+/* Возвращение сотрудников с минимальной и максимальной заработной платой. */
+SELECT * FROM employee ORDER BY id DESC /* С максимальной. */
+SELECT * FROM employee ORDER BY id /* С минимальной. */
+
+/* Возвращение максимальной заработной платы в каждом отделе. */
+SELECT department_id, MAX(salary) FROM employee GROUP BY department_id
